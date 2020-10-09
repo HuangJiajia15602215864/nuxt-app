@@ -1,65 +1,52 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-app
-      </h1>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">
-          Documentation
-        </a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
-          GitHub
-        </a>
-      </div>
+  <header>
+    <div class="text-box">
+      <h1>吃货天堂 😋</h1>
+      <p class="mt-3">制作我们喜爱的美食 ❤️ ️</p>
+      <nuxt-link class="btn btn-outline btn-large btn-info" to="/recipes">
+        查看食谱
+        <span class="ml-2">&rarr;</span>
+      </nuxt-link>
     </div>
-  </div>
+  </header>
 </template>
 
 <script>
-  export default {}
-
+export default {
+  head() {
+    return {
+      title: "首页"
+    };
+  }
+};
 </script>
 
 <style>
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .title {
-    font-family:
-      'Quicksand',
-      'Source Sans Pro',
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      'Helvetica Neue',
-      Arial,
-      sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-  }
-
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
-  }
-
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(12, 5, 5, 0.4)
+    ),
+    url("/images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.text-box h1 {
+  font-family: cursive;
+  font-size: 5rem;
+}
+.text-box p {
+  font-size: 2rem;
+  font-weight: lighter;
+}
 </style>
